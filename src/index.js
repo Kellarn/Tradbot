@@ -20,6 +20,7 @@ const appHome = require('./appHome');
 const message = require('./message');
 const connection = require('./tradfri/connection');
 const deviceChanger = require('./tradfri/deviceChanger');
+const _ = require('lodash');
 
 const app = express();
 
@@ -76,15 +77,15 @@ function printDeviceInfo(device) {
   switch (device.type) {
     case 0: // remote
     case 4: // sensor
-      console.log(
-        device.instanceId,
-        device.name,
-        `battery ${device.deviceInfo.battery}%`
-      );
+      // console.log(
+      //   device.instanceId,
+      //   device.name,
+      //   `battery ${device.deviceInfo.battery}%`
+      // );
       break;
     case 2: // light
-      let lightInfo = device.lightList[0];
-      let info = {
+      const lightInfo = device.lightList[0];
+      const info = {
         id: device.instanceId,
         name: device.name,
         on: lightInfo.onOff ? 'on' : 'off',
@@ -92,21 +93,34 @@ function printDeviceInfo(device) {
         dimmer: lightInfo.dimmer,
         color: lightInfo.color,
         colorTemperature: lightInfo.colorTemperature
+          ? lightInfo.colorTemperature
+          : 'undefined'
       };
-      console.log(
-        device.instanceId,
-        device.name,
-        lightInfo.onOff ? 'On' : 'Off',
-        JSON.stringify(info)
-      );
-      db.push(`/${info.id}/info[]`, info, true);
+      console.log('printDeviceInfo -> info', info);
+      // console.log(
+      //   device.instanceId,
+      //   device.name,
+      //   lightInfo.onOff ? 'On' : 'Off',
+      //   JSON.stringify(info)
+      // );
+      try {
+        const rawData = db.getData(`/${info.id}/info/`);
+        console.log('printDeviceInfo -> rawData', rawData);
+        if (!_.isEqual(rawData, info)) {
+          console.log('Saving to db!');
+          db.push(`/${info.id}/info`, info);
+        }
+      } catch (e) {
+        console.error(e);
+        db.push(`/${info.id}/info`, info);
+      }
       break;
     case 3: // plug
-      console.log(
-        device.instanceId,
-        device.name,
-        device.plugList[0].onOff ? 'On' : 'Off'
-      );
+      // console.log(
+      //   device.instanceId,
+      //   device.name,
+      //   device.plugList[0].onOff ? 'On' : 'Off'
+      // );
       break;
     default:
       console.log(device.instanceId, device.name, 'unknown type', device.type);
@@ -142,11 +156,8 @@ app.post('/slack/events', async (req, res) => {
     }
 
     case 'event_callback': {
-      const verified = signature.isVerified(req);
-      console.log('TCL: verified', verified);
       // Verify the signing secret
       if (!signature.isVerified(req)) {
-        console.log('Hello again', signature.isVerified(req));
         res.sendStatus(404);
         return;
       }

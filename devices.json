@@ -1,115 +1,101 @@
 {
     "65539": {
-        "info": [
-            {
-                "id": 65539,
-                "name": "Golvlampa 2",
-                "on": "on",
-                "spectrum": "white",
-                "dimmer": 100,
-                "color": "efd275",
-                "colorTemperature": 100
-            }
-        ]
+        "info": {
+            "id": 65539,
+            "name": "Golvlampa 2",
+            "on": "on",
+            "spectrum": "white",
+            "dimmer": 100,
+            "color": "efd275",
+            "colorTemperature": 100
+        }
     },
     "65540": {
-        "info": [
-            {
-                "id": 65540,
-                "name": "Symfonisk 2",
-                "on": "off",
-                "spectrum": "white",
-                "dimmer": 0,
-                "color": "0",
-                "colorTemperature": 100
-            }
-        ]
+        "info": {
+            "id": 65540,
+            "name": "Symfonisk 2",
+            "on": "off",
+            "spectrum": "white",
+            "dimmer": 0,
+            "color": "0",
+            "colorTemperature": 100
+        }
     },
     "65541": {
-        "info": [
-            {
-                "id": 65541,
-                "name": "Symfonisk 1",
-                "on": "off",
-                "spectrum": "white",
-                "dimmer": 0,
-                "color": "0",
-                "colorTemperature": 100
-            }
-        ]
+        "info": {
+            "id": 65541,
+            "name": "Symfonisk 1",
+            "on": "off",
+            "spectrum": "white",
+            "dimmer": 0,
+            "color": "0",
+            "colorTemperature": 100
+        }
     },
     "65542": {
-        "info": [
-            {
-                "id": 65542,
-                "name": "Golvlampa 1",
-                "on": "on",
-                "spectrum": "white",
-                "dimmer": 100,
-                "color": "f1e0b5",
-                "colorTemperature": 58.8
-            }
-        ]
+        "info": {
+            "id": 65542,
+            "name": "Golvlampa 1",
+            "on": "on",
+            "spectrum": "white",
+            "dimmer": 100,
+            "color": "f1e0b5",
+            "colorTemperature": 58.8
+        }
     },
     "65543": {
-        "info": [
-            {
-                "id": 65543,
-                "name": "TRADFRI bulb 5",
-                "on": "off",
-                "spectrum": "white",
-                "dimmer": 0,
-                "color": "0",
-                "colorTemperature": 100
-            }
-        ]
+        "info": {
+            "id": 65543,
+            "name": "TRADFRI bulb 5",
+            "on": "off",
+            "spectrum": "white",
+            "dimmer": 0,
+            "color": "0",
+            "colorTemperature": 100
+        }
     },
     "65544": {
-        "info": [
-            {
-                "id": 65544,
-                "name": "TRADFRI bulb 6",
-                "on": "on",
-                "spectrum": "rgb",
-                "dimmer": 100,
-                "color": "6c83ba"
-            }
-        ]
+        "info": {
+            "id": 65544,
+            "name": "TRADFRI bulb 6",
+            "on": "on",
+            "spectrum": "rgb",
+            "dimmer": 100,
+            "color": "6c83ba",
+            "colorTemperature": "undefined"
+        }
     },
     "65545": {
-        "info": [
-            {
-                "id": 65545,
-                "name": "TRADFRI bulb 8",
-                "on": "on",
-                "spectrum": "rgb",
-                "dimmer": 100,
-                "color": "c984bb"
-            }
-        ]
+        "info": {
+            "id": 65545,
+            "name": "TRADFRI bulb 8",
+            "on": "on",
+            "spectrum": "rgb",
+            "dimmer": 100,
+            "color": "c984bb",
+            "colorTemperature": "undefined"
+        }
     },
     "65546": {
-        "info": [
-            {
-                "id": 65546,
-                "name": "TRADFRI bulb 7",
-                "on": "on",
-                "spectrum": "rgb",
-                "dimmer": 100,
-                "color": "6c83ba"
-            }
-        ]
+        "info": {
+            "id": 65546,
+            "name": "TRADFRI bulb 7",
+            "on": "on",
+            "spectrum": "rgb",
+            "dimmer": 100,
+            "color": "6c83ba",
+            "colorTemperature": "undefined"
+        }
     },
     "65547": {
-        "info": [
-            {
-                "id": 65547,
-                "name": "TRADFRI bulb 9",
-                "on": "on",
-                "spectrum": "rgb",
-                "dimmer": 100,
-                "color": "6c83ba"
-            }
-        ]
+        "info": {
+            "id": 65547,
+            "name": "TRADFRI bulb 9",
+            "on": "on",
+            "spectrum": "rgb",
+            "dimmer": 100,
+            "color": "6c83ba",
+            "colorTemperature": "undefined"
+        }
     }
 }

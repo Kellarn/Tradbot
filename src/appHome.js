@@ -42,7 +42,7 @@ const updateView = async user => {
     // console.log('TCL: getAndPrintDevices -> info', info);
 
     if (info !== undefined) {
-      console.log('TCL: info', info);
+      // console.log('TCL: info', info);
       const basicInfo = {
         type: 'section',
         block_id: '',
